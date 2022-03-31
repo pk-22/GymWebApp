@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 })
 
 // login
-app.post("/login",(req,res)=> {
+app.post("/login",async (req,res)=> {
     try {
         const email = req.body.email;
         const password = req.body.password;
