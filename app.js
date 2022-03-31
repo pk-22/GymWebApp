@@ -29,6 +29,24 @@ app.get("/", (req, res) => {
     res.render("home");
 })
 
+// login
+app.post("/login",(req,res)=> {
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+        const user = await User.findOne({ email: email });
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (isMatch) {
+            req.session.userId = user._id;
+            res.status(201).render("profile");
+        } else {
+            res.send("Invalid Credentials")
+        }
+    } catch (error) {
+        res.status(400).send("Invalid credentials (wrong)");
+    }
+})
+
 //Listen On Server
 app.listen(process.env.PORT || 8000, function (err) {
     if (err) {
