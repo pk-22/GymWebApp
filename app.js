@@ -30,6 +30,9 @@ app.get("/", (req, res) => {
 })
 
 // login
+app.get("/login",(req,res)=>{
+    res.render("login")
+})
 app.post("/login",async (req,res)=> {
     try {
         const email = req.body.email;
@@ -45,6 +48,44 @@ app.post("/login",async (req,res)=> {
     } catch (error) {
         res.status(400).send("Invalid credentials (wrong)");
     }
+})
+
+
+// register
+app.get("/register", (req,res)=>{
+    res.render("register")
+})
+app.post("/register", async(req, res)=>{
+    try {
+        const password = req.body.password;
+        const cpassword = req.body.cpassword;
+        if (password === cpassword) {
+            const newuser = new User({
+                name: req.body.name,
+                email: req.body.email,
+                phone: req.body.phone,
+                gender: req.body.gender,
+                address: req.body.address,
+                password: password,
+                age: req.body.age,
+                height: req.body.height,
+                weight: req.body.weight
+            })
+            const registered = await newuser.save();
+            res.status(201).render("login");
+        } else {
+            res.send("Confirm password and password are different")
+        }
+    } catch (error) {
+        res.status(400).send(error);
+    }
+})
+
+
+// logout
+app.get("/logout",(req, res) => {
+    req.session.destroy();
+    res.render("index");
 })
 
 //Listen On Server

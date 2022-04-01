@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="home">
+        <a href="/">Home </a> |
+        <a href="/login">Login</a>
+    </div>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/register" method="POST" class="form">
+            <div class="box">
+                <i class="fa fa-users"></i>
+                <input type="text" name="name" id="name" placeholder="Name" class="input" required>	
+            </div>
+            <div class="box">
+                <i class="fa fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" class="input" required>	
+            </div>
+            <div class="box">
+                <select name="gender" id="gender" class="select">
+                    <option value="" id="default">Gender</option>
+                    <option value="male" class="option">Male</option>
+                    <option value="female" class="option">Female</option>
+                    <option value="transgender" class="option">Transgender</option>
+                    <option value="others" class="option">Others</option>
+                </select>
+            </div>
+            <div class="box">
+                <i class="fa fa-phone"></i>
+                <input type="text" name="phone" id="phone" placeholder="Phone Number" class="input" required>	
+            </div>
+            <div class="box">
+                <i class="fa fa-address-card"></i>
+                <input type="text" name="address" id="address" placeholder="Address" class="input" required>	
+            </div>
+            <div class="box">
+                <i class="fa fa-lock"></i>    
+                <input type="password" name="password" id="password" placeholder="Password" class="input" required><br>
+            </div>
+            <div class="box">
+                <i class="fa fa-lock"></i>    
+                <input type="password" name="cpassword" id="password" placeholder="Confirm Password" class="input" required><br>
+            </div>
+            <div class="box">
+            <div class="box">
+                <i class="fa fa-lock"></i>    
+                <input type="number" name="age" id="age" placeholder="age" class="input" required><br>
+            </div>
+            <div class="box">
+                <i class="fa fa-lock"></i>    
+                <input type="number" name="height" id="height" placeholder="Height" class="input" required><br>
+            </div>
+            <div class="box">
+                <i class="fa fa-lock"></i>    
+                <input type="number" name="weight" id="weight" placeholder="Weight" class="input" required><br>
+            </div>
+            <input type="submit" class="btn" value="Register">
+        </form>
+        <p class="redirect">
+            Already have an account? <a href="/login">Sign In Here</a>
+        </p>
+    </div>
+</body>
+</html>
