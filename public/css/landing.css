@@ -96,7 +96,14 @@
     border: none;
 }
 
-
+.login{
+  color: white;
+  text-decoration: none;
+}
+.login:hover{
+  color: black;
+  text-decoration: none;
+}
 
 .btn {
     margin-right: 11px;
