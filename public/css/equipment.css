@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Balsamiq Sans', cursive; */
+    text-transform: capitalize;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    /* background: url('/images/gym1.jpg') no-repeat center center; */
+    /* opacity: 0.9; */
+    /* background-size: cover;
+    background-position: center; */
+}
+body::before{
+    content: "";
+    background: url('/images/gym1.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #343a40;
+    color: white;
+    padding: 4px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .logo{
+    /* font-family: 'Comfortaa', cursive; */
+    font-weight: bolder;
+    color: white;
+    font-size: 25px;
+}
+header .navbar ul{
+     list-style: none;
+}
+header .navbar ul li{
+    position: relative;
+    float: left;
+}
+header .navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 20px;
+    margin: 7px 3px;
+    display: block;
+}
+header .navbar ul li a:hover{
+    border-radius: 14px;
+    background-color: white;
+    color: black;
+}
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 100px;
+    background: #343a40;
+    display: none;
+    border-radius: 15px;
+}
+header .navbar ul li:focus-within>ul,
+header .navbar ul li:hover>ul{
+    display: initial;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    /* border-top: 1px solid rgb(83, 83, 83); */
+}
+header .navbar ul li ul li ul{
+    left: 160px;
+    top: 0;
+}
+#menu-bar{
+    display: none;
+}
+header label{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* form */
+.container{
+    display: flex;
+    width: 40%;
+    margin-left: 29%;
+    margin-top: 60px;
+    /* margin: 44px; */
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.form{
+    padding: 2px 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    /* size: 80px; */
+}
+
+.book{
+    font-size: 16px;
+    
+    background: rgb(0, 40, 158);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 4px 6px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.book:hover{
+    background-color: black;
+}
+.box{
+    border-bottom: 2px solid black;
+    margin: 4px 0px;
+}
+.input{
+    background: none;
+    width: 80%;
+    margin: 10px 6px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+
+@media(max-width: 970px){
+    header{
+        padding: 7px;
+        
+    }
+    header label{
+        display: inline;
+        font-size: 16px;
+    }
+    header .logo{
+        font-size: 22px;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: black;
+        display: none;
+        transition: all 0.3s ease;
+    }
+    header .navbar ul li{
+        width: 100%;
+    }
+    header .navbar ul li a{
+        font-size: 14px;
+    }
+    header .navbar ul li a:hover{
+        color: cyan;
+        background-color: black;
+    }
+    header .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    header .navbar ul li ul li{
+        background: black;
+    }
+    header .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+    #menu-bar:checked~.navbar{
+        display: initial;
+    }
+    /* form */
+    .container{
+        width: 80%;
+        margin-left: 9%;
+    }
+    .container h1{
+        text-align: center;
+        margin-left: 0;
+        font-size: 23px;
+    }
+    .input{
+        font-size: 15px;
+    }
+}

@@ -41,7 +41,7 @@ app.post("/login",async (req,res)=> {
         const isMatch = await bcrypt.compare(password, user.password);
         if (isMatch) {
             req.session.userId = user._id;
-            res.status(201).render("profile");
+            res.status(201).render("profile",{user});
         } else {
             res.send("Invalid Credentials")
         }
@@ -82,10 +82,21 @@ app.post("/register", async(req, res)=>{
 })
 
 
+// add equipment
+app.get("/add-equipment", (req,res)=>{
+    res.render("add")
+})
+
+
+// remove equipment
+app.get("/remove-equipment", (req,res)=>{
+    res.render("remove")
+})
+
 // logout
 app.get("/logout",(req, res) => {
     req.session.destroy();
-    res.render("index");
+    res.render("login");
 })
 
 //Listen On Server

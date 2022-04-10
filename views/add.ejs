@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Prompt:ital,wght@1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Hind+Siliguri&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/equipment.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <nav class="navbar">
             <ul>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="/profile">Profile</a>
                 </li>
                 <li>
                     <a href="#">Manage Users</a>
@@ -51,9 +51,20 @@
             </ul>
         </nav>
     </header>
-    <div class="welcome">
-        <h3 style="color: white; font-size: 28px; margin: 10px 40px;">Welcome, <%=user.name %>.</h3>
-    </div>
 </body>
-
+<div class="container">
+    <h1>Add Equipment</h1>
+    <form action="/add-equipmet" method="POST" class="form">
+        <div class="box">
+            <input type="text" id="equip-id" name="equip-id" placeholder="Enter Equipment ID" class="input">
+        </div>
+        <div class="box">
+            <input type="text" id="equip-name" name="equip-name" placeholder="Enter Equipment Name" class="input">
+        </div>
+        <div class="box">
+            <input type="file" name="equip-image" id="equip-image" placeholder="Upload Equipment Image">
+        </div>
+        <input type="submit" value="Add" class="book">
+    </form>
+</div>
 </html>
